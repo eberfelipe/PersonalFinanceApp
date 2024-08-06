@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Use the navigation menu to access different sections of the app.</p>
+    <div>
+        <a asp-controller="Expenses" asp-action="Index" class="btn btn-primary">View Expenses</a>
+        <a asp-controller="Goals" asp-action="Index" class="btn btn-secondary">View Goals</a>
+        <a asp-controller="Incomes" asp-action="Index" class="btn btn-success">View Incomes</a>
+    </div>
+</div>
