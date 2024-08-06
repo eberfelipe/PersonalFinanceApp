@@ -46,7 +46,7 @@ namespace PersonalFinanceApp.Controllers
         // GET: Expenses/Create
         public IActionResult Create()
         {
-            ViewBag.Categories = Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>();
+            ViewBag.Categories = new SelectList(Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>());
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace PersonalFinanceApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Categories = Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>();
+            ViewBag.Categories = new SelectList(Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>());
             return View(expense);
         }
 
@@ -78,7 +78,7 @@ namespace PersonalFinanceApp.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Categories = Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>();
+            ViewBag.Categories = new SelectList(Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>());
             return View(expense);
         }
 
@@ -112,7 +112,7 @@ namespace PersonalFinanceApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Categories = Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>();
+            ViewBag.Categories = new SelectList(Enum.GetValues(typeof(ExpenseCategory)).Cast<ExpenseCategory>());
             return View(expense);
         }
 
