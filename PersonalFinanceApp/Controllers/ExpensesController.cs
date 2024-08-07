@@ -153,5 +153,15 @@ namespace PersonalFinanceApp.Controllers
         {
             return _context.Expenses.Any(e => e.Id == id);
         }
+
+        
+        public async Task<IActionResult> FoodExpenses()
+        {
+            var foodExpenses = await _context.Expenses
+                .Where(e => e.Category == ExpenseCategory.Food)
+                .ToListAsync();
+            return View(foodExpenses);
+        }
+                
     }
 }

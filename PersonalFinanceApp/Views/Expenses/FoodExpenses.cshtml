@@ -1,0 +1,23 @@
+﻿@model IEnumerable<PersonalFinanceApp.Models.Expense>
+
+<h2>Food Expenses</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.Name</td>
+                <td>@expense.Value</td>
+                <td>@expense.Category</td>
+            </tr>
+        }
+    </tbody>
+</table>

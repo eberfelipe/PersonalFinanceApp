@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create Expense";
 }
 
-<h1>Create Expense</h1>
+<h2>Create Expense</h2>
 
 <h4>Expense</h4>
 <hr />
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
-                <select asp-for="Category" class="form-control" asp-items="@(new SelectList(ViewBag.Categories))"></select>
+                <select asp-for="Category" class="form-control" asp-items="ViewBag.Categories"></select>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,5 +34,11 @@
 </div>
 
 <div>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
